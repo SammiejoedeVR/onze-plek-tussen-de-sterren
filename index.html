@@ -93,7 +93,9 @@
     count.textContent = (i + 1) + ' / ' + imgs.length;
     try { localStorage.setItem('ops-slide', String(i)); } catch (e) {}
   }
-  try { var s = parseInt(localStorage.getItem('ops-slide'), 10); if (s > 0) show(s); } catch (e) {}
+  try { var s = parseInt(localStorage.getItem('ops-slide'), 10); if (s > 0) { i = 0; } } catch (e) {}
+  imgs[0].classList.add('on');
+  count.textContent = '1 / ' + imgs.length;
 
   function sync() {
     var portrait = window.innerHeight > window.innerWidth;
